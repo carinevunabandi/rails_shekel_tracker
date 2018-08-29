@@ -1,12 +1,26 @@
 doctype html
-html
-  head
-    title RailsShekelTracker
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
-    = csrf_meta_tags
+head
+  title Shekel Tracker
+  = stylesheet_link_tag    'application', media: 'all'
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
 meta name="author" content="Carine Vunabandi"
 meta name="viewport" content="width=device-width, initial-scale=1.0"
 body
+  nav.navbar.navbar-inverse.navbar-static-top role="navigation"
+    = render "partials/navbar"
   .container
     = yield
+
+
+    .div
+      - if flash[:success]
+        .alert.alert-success = flash[:success]
+      - if flash[:error]
+        .alert.alert-danger = flash[:error]
+
+  .div#footer
+    hr
+    p.text-center.footer-block
+      | Contact:
+      a href="mailto:carinevun@yahoo.com?Subject=About Shekel Tracker" rel="author" carinevun@yahoo.com

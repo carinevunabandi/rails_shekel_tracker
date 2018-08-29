@@ -1,0 +1,21 @@
+$height-footer: 60px;
+
+html {
+  min-height: 100%;
+  position: relative;
+
+  body {
+    margin-bottom: $height-footer;
+  }
+
+  #footer {
+    bottom: 10px;
+    width: 100%;
+    position: absolute;
+    height: $height-footer;
+    /*background-color: #f5f5f5;*/
+    .footer-block {
+      margin: 20px 0;
+    }
+  }
+}

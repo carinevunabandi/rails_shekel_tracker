@@ -1,0 +1,33 @@
+  div
+    h2.main_title Expense categories
+    .row
+      .col-md-8
+        p
+          |When an expense is entered, it must, first, be categorised into a <span class="highlight">main category</span>, then into a <span class="highlight">sub-category</span>.
+          |<br /><br />Below is a list of all the categories(types) of expenses that can be entered, including their sub-categories.
+          |<br />You can edit this list to suit your needs.<br /><br />
+      .col-md-4
+        .vl
+        div.categories_buttons
+          button.btn.btn-info
+            span.glyphicon.glyphicon-plus
+          |&nbsp; New Category <br /><br />
+          button.btn.btn-info
+            span.glyphicon.glyphicon-plus
+          |&nbsp; Add sub-category to an existing main category <br /><br />
+          button.btn.btn-info
+            span.glyphicon.glyphicon-edit
+          |&nbsp; Edit existing Category <br />
+    hr
+    - @categories_list.in_groups_of(6) do |grouped_categories|
+      .row
+      - grouped_categories.each do |single_category_array|
+        - if !single_category_array.nil?
+          .col-md-2
+            h4 = single_category_array.first
+            - if single_category_array.last.size == 0
+              p No sub-categories
+            - else
+            ul
+              - single_category_array.last.each do |sub_category_item|
+                li = sub_category_item

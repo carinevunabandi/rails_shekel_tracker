@@ -1,12 +1,15 @@
 ENV['RACK_ENV'] = 'test'
 
-#require File.expand_path('../../../shekel_tracker.rb', __FILE__)
-
 #require 'byebug'
-#require 'capybara/cucumber'
+require 'capybara'
+require 'capybara/cucumber'
 require 'cucumber/rails'
 require 'database_cleaner'
+require 'factory_bot_rails'
 require 'site_prism'
+require 'selenium-webdriver'
+
+World(FactoryBot::Syntax::Methods)
 
 DatabaseCleaner.strategy = :truncation
 
