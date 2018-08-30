@@ -189,6 +189,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.2.0)
+  rake
   rspec-rails
   selenium-webdriver
   site_prism

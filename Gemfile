@@ -20,4 +20,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'site_prism'
   gem 'selenium-webdriver'
+  gem 'rake'
 end
