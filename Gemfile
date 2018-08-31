@@ -22,4 +22,5 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rake'
   gem 'roodi'
+  gem 'rubocop'
 end
