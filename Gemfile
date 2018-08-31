@@ -21,4 +21,5 @@ group :development, :test do
   gem 'site_prism'
   gem 'selenium-webdriver'
   gem 'rake'
+  gem 'roodi'
 end
