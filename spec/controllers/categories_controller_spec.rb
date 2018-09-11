@@ -3,12 +3,11 @@ require 'rails_helper'
 RSpec.describe CategoriesController, type: :controller do
 
   describe "GET #index" do
-    let(:categories_facade_array)    { double (:categories_facade_array) }
-    let(:main_cats_and_subs)         { double (:main_cats_and_subs) }
+    let(:categories_facade_array)    { double(:categories_facade_array) }
+    let(:main_cats_and_subs)         { double(:main_cats_and_subs) }
 
     before do
       allow(CategoriesFacade).to receive(:new).and_return(categories_facade_array)
-      #allow(categories_facade).to receive(:all_main_cats_and_subs).and_return(main_cats_and_subs)
       allow(categories_facade_array).to receive(:all_main_cats_and_subs_in_arrays).and_return(main_cats_and_subs)
     end
 
