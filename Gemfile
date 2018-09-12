@@ -19,9 +19,11 @@ group :development, :test do
   gem "faker"
   gem "rails_best_practices"
   gem "rake"
+  gem "rake-n-bake"
   gem "roodi"
   gem "rspec-rails"
   gem "rubocop"
   gem "selenium-webdriver"
+  gem "simplecov"
   gem "site_prism"
 end

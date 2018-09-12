@@ -5,6 +5,7 @@ task :default => %i[
   clean
   checks
   spec
+  bake:coverage:check_specs
 ]
 # spec
 # bake:coverage:check_specs
