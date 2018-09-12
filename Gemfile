@@ -17,6 +17,7 @@ group :development, :test do
   gem "database_cleaner"
   gem "factory_bot_rails"
   gem "faker"
+  gem "rails_best_practices"
   gem "rake"
   gem "roodi"
   gem "rspec-rails"
