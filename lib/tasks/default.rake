@@ -6,6 +6,8 @@ task :default => %i[
   checks
   spec
   bake:coverage:check_specs
+  cucumber
+  bake:ok_rainbow
 ]
 # spec
 # bake:coverage:check_specs
