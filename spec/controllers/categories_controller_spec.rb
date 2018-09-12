@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CategoriesController, type: :controller do
-
   describe "GET #index" do
     let(:categories_facade_array)    { double(:categories_facade_array) }
     let(:main_cats_and_subs)         { double(:main_cats_and_subs) }

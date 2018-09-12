@@ -30,19 +30,23 @@ Documentation:
   Enabled: false
 Metrics/LineLength:
   Max: 140
-Style/SpaceInsideBlockBraces:
+Metrics/BlockLength:
+  Enabled: True
+  Exclude:
+    - spec/**/*
+Layout/SpaceInsideBlockBraces:
   SpaceBeforeBlockParameters: false
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 Style/HashSyntax:
   Exclude:
     - lib/tasks/*
-Style/PredicateName:
+Naming/PredicateName:
   NamePrefixBlacklist:
     - is_
 Style/AndOr:
   EnforcedStyle: conditionals
-Style/SpaceInsideHashLiteralBraces:
+Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 Style/BlockDelimiters:
   EnforcedStyle: semantic
@@ -50,7 +54,7 @@ Style/BlockDelimiters:
     - factories/**/*
 Style/FrozenStringLiteralComment:
   Enabled: false
-Style/VariableNumber:
+Naming/VariableNumber:
   Enabled: false
 Style/SingleLineBlockParams:
   Enabled: false
