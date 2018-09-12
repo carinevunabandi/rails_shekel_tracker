@@ -9,10 +9,3 @@ task :default => %i[
   cucumber
   bake:ok_rainbow
 ]
-# spec
-# bake:coverage:check_specs
-# cucumber
-# cucumber:wip
-# stats
-# notes
-# success
