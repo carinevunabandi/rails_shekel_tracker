@@ -1,16 +1,16 @@
 class Homepage < SitePrism::Page
   set_url '/'
 
-  element :past_budgets_link, :link, 'Past Budgets'
-  element :current_budget_link, :link, 'Current Budget'
+  element :past_months_link, :link, 'Past Months'
+  element :current_month_link, :link, 'Current Month'
 
   def view_current
-    current_budget_link.click
+    current_month_link.click
     CurrentBudgetPage.new
   end
 
   def view_past
-    past_budgets_link.click
+    past_months_link.click
     PastBudgetsPage.new
   end
 end
