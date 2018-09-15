@@ -7,9 +7,9 @@
           span.icon-bar
       div.collapse.navbar-collapse#myNavbar
         ul.nav.navbar-nav
-          li = link_to "Current month"
-          li = link_to "Past months"
-          li = link_to "Categories"
+          li = link_to "Current month", "current"
+          li = link_to "Past months", "past"
+          li = link_to "Categories", categories_path
         ul.nav.navbar-nav.navbar-right
           li = link_to "Login"
             span.glyphicon.glyphicon-log-in
