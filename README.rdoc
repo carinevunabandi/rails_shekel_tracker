@@ -26,3 +26,21 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+gem install bundler (for this version of ruby)
+
+Dependencies:
+Postgres
+-------
+brew update
+brew install pg
+Start PostgreSQL: pg_ctl -D /usr/local/var/postgres start
+
+
+Create Dev and Test databases
+-----------------------------
+RAILS_ENV=development rake db:create
+RAILS_ENV=development rake db:migrate
+
+RAILS_ENV=test rake db:create
+RAILS_ENV=test rake db:migrate
