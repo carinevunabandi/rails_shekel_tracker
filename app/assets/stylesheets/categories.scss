@@ -22,7 +22,6 @@ h4, li {
 
 .cat_list_div {
   border: 1px solid;
-  /*height: 270px;*/
 }
 
 .vl {
@@ -38,4 +37,41 @@ h4, li {
 
 button {
   background-color: $preferred-colour !important;
+}
+
+.modal_tip {
+  color:grey;
+  font-style: italic;
+  font-weight: normal
+}
+
+#modal_more_sub_cats_btn {
+  border-radius: 50%;
+}
+
+.modal-sub-cat-label {
+}
+
+
+.modal-sub-cat-label-div {
+}
+
+.modal-sub-cat-textfield {
+}
+
+.modal-sub-cat-textfield-div {
+}
+
+.modal-glyphicon-remove {
+  color: $preferred-colour;
+}
+
+.sub-cat-row {
+  margin-top: 20px;
+}
+
+#modal-sub-cats-div {
+}
+
+.modal-sub-cat-rmv-btn-div {
 }

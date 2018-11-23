@@ -23,3 +23,34 @@ And "I see the list of all sub-categories for each main category" do
   expect(@categories_page).to have_content "Credit Payment"
   expect(@categories_page).to have_content "Loan Payment"
 end
+
+When "I click the create new category button" do
+  @categories_page.create_new_button.click
+end
+
+And "I enter in the name and the description of the new category" do
+  @categories_page.type_in_category("Latest Category")
+  @categories_page.type_in_description("Latest Category Description")
+end
+
+And "I enter in the name of any sub-categories for the new category" do
+  debugger
+    @categories_page.type_in_sub_categories(["Latest sub-category 1",
+                                             "Latest sub-category 2",
+                                             "Latest sub-category 3"])
+end
+
+And "I click save" do
+    @categories_page.save_new.click
+end
+
+Then "a pop-up box should appear" do
+  expect(@categories_page).to have_content('Create a new expense category')
+end
+
+Then "the new category and any sub-categories should be created" do
+  expect(MainCategory.find_by(name: "Latest Category")).not_to be_empty
+  expect(SubCategory.find_by(name: "Latest sub-category 1")).not_to be_empty
+  expect(SubCategory.find_by(name: "Latest sub-category 2")).not_to be_empty
+  expect(SubCategory.find_by(name: "Latest sub-category 3")).not_to be_empty
+end

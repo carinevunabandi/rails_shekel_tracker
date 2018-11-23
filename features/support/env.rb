@@ -3,13 +3,20 @@ ENV["RACK_ENV"] = "test"
 # require 'byebug'
 require "capybara"
 require "capybara/cucumber"
+require 'capybara/poltergeist'
 require "cucumber/rails"
 require "database_cleaner"
 require "factory_bot_rails"
 require "site_prism"
-require "selenium-webdriver"
+
 
 World(FactoryBot::Syntax::Methods)
+
+Capybara.register_driver :poltergeist do |app|
+  options = { js_errors: false }
+  Capybara::Poltergeist::Driver.new(app, options)
+end
+Capybara.javascript_driver = :poltergeist
 
 DatabaseCleaner.strategy = :truncation
 

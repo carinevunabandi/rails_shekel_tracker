@@ -1,0 +1,35 @@
+    div class="modal fade" id="new_category_modal_dialog" role="dialog" data-keyboard="false" data-backdrop="static"
+      div class="modal-dialog"
+        div class="modal-content"
+          div class="modal-header"
+            button type="button" class="close" data-dismiss="modal"
+             | &times;
+            h4 class="modal-title"
+              | Create a new expense category
+          div class="modal-body"
+            div.row
+              div.col-md-12.form-group
+                label for="new-main-cat-name"
+                  |Name &nbsp;&nbsp;&nbsp;
+                  span.modal_tip
+                    |[Example: Transportation]
+                input.form-control#new-main-cat-name type='text'
+              div.col-md-12.form-group
+                label for="new-main-cat-desc"
+                  |Description &nbsp;&nbsp;&nbsp;
+                  span.modal_tip
+                    |[Example: Everything related to means of travelling]
+                input.form-control#new-main-cat-desc type='text'
+            div.row
+              div.col-md-12
+                p
+                  |Any sub-categories? Click &nbsp;
+                  button#modal-more-sub-cats-btn
+                    |+
+                  |&nbsp;&nbsp;to add.
+                p Descriptions of sub-categories can be added later, by editing a category.
+            div.row#modal-sub-cats-div
+
+          div class="modal-footer"
+            button#modal-save.btn.btn-default.modal_control_btns Save
+            button#modal-close.btn.btn-default.modal_control_btns data-dismiss="modal" Close

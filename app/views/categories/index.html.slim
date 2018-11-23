@@ -9,7 +9,7 @@
       .col-md-4
         .vl
         div.categories_buttons
-          button.btn.btn-info
+          button.btn.btn-info.btn-lg type='button' name = 'create-new' data-toggle='modal' data-target='#new_category_modal_dialog'
             span.glyphicon.glyphicon-plus
           |&nbsp; New Category <br /><br />
           button.btn.btn-info
@@ -31,3 +31,5 @@
             ul
               - single_category_array.last.each do |sub_category_item|
                 li = sub_category_item
+
+    = render "partials/new_cat_modal"
