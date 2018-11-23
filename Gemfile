@@ -4,7 +4,7 @@ gem "bootstrap-sass"
 gem "bundler"
 gem 'glyphicons-rails'
 gem "jquery-rails"
-gem "pg"
+gem 'pg', '~> 0.20'
 gem "popper_js"
 gem "rails", "4.2.0"
 gem "slim"
