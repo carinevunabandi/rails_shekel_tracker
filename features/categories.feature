@@ -12,7 +12,7 @@ Feature: Viewing the list of categories and their sub-categories
     When I click the create new category button
     Then a pop-up box should appear
 
-    @wip
+    @javascript
   Scenario: Adding a new category with no sub-categories
     When I click the create new category button
     And I enter in the name and the description of the new category

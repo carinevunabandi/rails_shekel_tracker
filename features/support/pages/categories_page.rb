@@ -7,7 +7,7 @@ class CategoriesPage < SitePrism::Page
   element :add_sub_cats_btn   , 'button[id="modal-more-sub-cats-btn"]'
   element :save_new           , 'button[id="modal-save"]'
   element :modal_dialog       , 'div[id="new_category_modal_dialog"]'
-  element :sub_cats_fields    , 'input[class="modal-sub-cat-textfield"]'
+  elements :sub_cats_fields    , '.modal-sub-cat-textfield'
 
   def type_in_category cat_name
     new_cat_name_field.set(cat_name)

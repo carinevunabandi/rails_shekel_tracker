@@ -34,7 +34,6 @@ And "I enter in the name and the description of the new category" do
 end
 
 And "I enter in the name of any sub-categories for the new category" do
-  debugger
     @categories_page.type_in_sub_categories(["Latest sub-category 1",
                                              "Latest sub-category 2",
                                              "Latest sub-category 3"])
@@ -49,8 +48,8 @@ Then "a pop-up box should appear" do
 end
 
 Then "the new category and any sub-categories should be created" do
-  expect(MainCategory.find_by(name: "Latest Category")).not_to be_empty
-  expect(SubCategory.find_by(name: "Latest sub-category 1")).not_to be_empty
-  expect(SubCategory.find_by(name: "Latest sub-category 2")).not_to be_empty
-  expect(SubCategory.find_by(name: "Latest sub-category 3")).not_to be_empty
+  expect(MainCategory.find_by(name: "Latest Category")).not_to be_nil
+  expect(SubCategory.find_by(name: "Latest sub-category 1")).not_to be_nil
+  expect(SubCategory.find_by(name: "Latest sub-category 2")).not_to be_nil
+  expect(SubCategory.find_by(name: "Latest sub-category 3")).not_to be_nil
 end
