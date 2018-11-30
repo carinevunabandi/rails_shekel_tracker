@@ -16,11 +16,6 @@ ActiveRecord::Schema.define(version: 20180811225034) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "budgets", force: :cascade do |t|
-    t.integer "time_period_id"
-    t.integer "amount"
-  end
-
   create_table "main_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

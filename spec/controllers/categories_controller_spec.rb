@@ -30,4 +30,30 @@ RSpec.describe CategoriesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "POST #create" do
+    context "Creating a category with no description" do
+      it "creates a new category which has no description" do
+
+      end
+    end
+
+    context "Creating a category without sub-categories" do
+      it "creates a new category which has no sub-categories" do
+
+      end
+    end
+
+    context "Creating a category with sub-categories" do
+      it "creates a new category with its sub-categories" do
+
+      end
+    end
+
+    context "Creating a category with sub-categories with empty fields" do
+      it "creates a new category ignoring any empty sub-categories text-fields" do
+        
+      end
+    end
+  end
 end

@@ -2,7 +2,11 @@
 // All this logic will automatically be available in application.js.
 
 $(function() {
-
+  // var uuid = require("uuid");
+  var id_string = Math.random().toString(36).substring(2)
+               + (new Date()).getTime().toString(36);
+  // var id_string = uuid.v4();
+  
   //Add a sub-category within the Bootstrap modal pop-up box
   $('#modal-more-sub-cats-btn').click(function() {
      var cat_label = document.createElement("label");
@@ -17,6 +21,7 @@ $(function() {
      cat_textfield.setAttribute("class","form-control modal-sub-cat-textfield");
      var sub_cat_textfield_div = document.createElement("div");
      sub_cat_textfield_div.setAttribute("class","col-xs-10 modal-sub-cat-textfield-div");
+     sub_cat_textfield_div.setAttribute("name", `sub_cat_${id_string}`);
      sub_cat_textfield_div.appendChild(cat_textfield);
 
      var cat_rmv_link = document.createElement("a");
