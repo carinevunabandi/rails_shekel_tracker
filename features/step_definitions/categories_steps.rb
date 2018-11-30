@@ -43,10 +43,6 @@ And "I click save" do
     @categories_page.save_new.click
 end
 
-Then "a pop-up box should appear" do
-  expect(@categories_page).to have_content('Create a new expense category')
-end
-
 Then "the new category and any sub-categories should be created" do
   expect(MainCategory.find_by(name: "Latest Category")).not_to be_nil
   expect(SubCategory.find_by(name: "Latest sub-category 1")).not_to be_nil

@@ -8,10 +8,6 @@ Feature: Viewing the list of categories and their sub-categories
     Then I see the list of all categories
     And  I see the list of all sub-categories for each main category
 
-  Scenario: Clicking to add a new category triggers a pop-up modal box
-    When I click the create new category button
-    Then a pop-up box should appear
-
     @javascript
   Scenario: Adding a new category with no sub-categories
     When I click the create new category button
