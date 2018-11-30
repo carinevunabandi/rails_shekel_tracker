@@ -1,0 +1,35 @@
+    div class="modal fade" id="new_category_modal_dialog" role="dialog" data-keyboard="false" data-backdrop="static"
+      div class="modal-dialog"
+        div class="modal-content"
+          div class="modal-header"
+            button type="button" class="close" data-dismiss="modal"
+             | &times;
+            h4 class="modal-title"
+              | Create a new expense category
+            = form_tag(url: "/categories", method: "post") do
+              div class="modal-body"
+                div.row
+                  div.col-md-12.form-group
+                    = label_tag :new_main_cat_name
+                      |Name &nbsp;&nbsp;&nbsp;
+                      span.modal_tip
+                        |[Example: Transportation]
+                    = text_field_tag :new_main_cat_name , nil, class:"form-control" 
+                  div.col-md-12.form-group
+                    = label_tag :new_main_cat_desc
+                      |Description &nbsp;&nbsp;&nbsp;
+                      span.modal_tip
+                        |[Example: Everything related to means of travelling]
+                    = text_field_tag :new_main_cat_desc , nil, class:"form-control" 
+                div.row
+                  div.col-md-12
+                    p
+                      |Any sub-categories? Click &nbsp;
+                      = button_tag :+, type: "button", id:"modal-more-sub-cats-btn"
+                      |&nbsp;&nbsp;to add.
+                    p Descriptions of sub-categories can be added later, by editing a category.
+                div.row#modal-sub-cats-div
+
+              div class="modal-footer"
+                = button_tag :Save, class:"btn btn-default modal_control_btns", id:"modal-save"
+                = button_tag :Close, type: "button", class:"btn btn-default modal_control_btns", "data-dismiss":"modal", id:"modal-close"

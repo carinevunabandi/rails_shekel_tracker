@@ -1,0 +1,16 @@
+    div.container#navbar_div
+      div.navbar-header
+        a.navbar-brand href="/" Shekel Tracker
+        button.navbar-toggle type="button" data-toggle="collapse" data-target="#myNavbar"
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      div.collapse.navbar-collapse#myNavbar
+        ul.nav.navbar-nav
+          li = link_to "Current month", "current"
+          li = link_to "Past months", "past"
+          li = link_to "Categories", categories_path
+        ul.nav.navbar-nav.navbar-right
+          li = link_to "Login"
+            span.glyphicon.glyphicon-log-in
+            |      Login
