@@ -34,13 +34,13 @@ And "I enter in the name and the description of the new category" do
 end
 
 And "I enter in the name of any sub-categories for the new category" do
-    @categories_page.type_in_sub_categories(["Latest sub-category 1",
-                                             "Latest sub-category 2",
-                                             "Latest sub-category 3"])
+  @categories_page.type_in_sub_categories(["Latest sub-category 1",
+                                           "Latest sub-category 2",
+                                           "Latest sub-category 3"])
 end
 
 And "I click save" do
-    @categories_page.save_new.click
+  @categories_page.save_new.click
 end
 
 Then "the new category and any sub-categories should be created" do

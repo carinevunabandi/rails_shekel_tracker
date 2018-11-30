@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
 gem "bootstrap-sass"
-gem "sass-rails"
 gem "bundler"
-gem 'glyphicons-rails'
+gem "glyphicons-rails"
 gem "jquery-rails"
-gem 'pg', '~> 0.20'
+gem "pg", "~> 0.20"
 gem "popper_js"
 gem "rails"
+gem "sass-rails"
 gem "slim"
 gem "turbolinks"
 # gem 'uglifier', '>= 1.3.0'

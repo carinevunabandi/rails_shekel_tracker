@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :sub_category do
-    name  { Faker::Name.name }
+    name  do Faker::Name.name end
     main_category
   end
 end
