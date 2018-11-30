@@ -6,30 +6,30 @@
              | &times;
             h4 class="modal-title"
               | Create a new expense category
-          div class="modal-body"
-            div.row
-              div.col-md-12.form-group
-                label for="new-main-cat-name"
-                  |Name &nbsp;&nbsp;&nbsp;
-                  span.modal_tip
-                    |[Example: Transportation]
-                input.form-control#new-main-cat-name type='text'
-              div.col-md-12.form-group
-                label for="new-main-cat-desc"
-                  |Description &nbsp;&nbsp;&nbsp;
-                  span.modal_tip
-                    |[Example: Everything related to means of travelling]
-                input.form-control#new-main-cat-desc type='text'
-            div.row
-              div.col-md-12
-                p
-                  |Any sub-categories? Click &nbsp;
-                  button#modal-more-sub-cats-btn
-                    |+
-                  |&nbsp;&nbsp;to add.
-                p Descriptions of sub-categories can be added later, by editing a category.
-            div.row#modal-sub-cats-div
+            = form_tag(url: "yahoo.fr", method: "post") do
+              div class="modal-body"
+                div.row
+                  div.col-md-12.form-group
+                    = label_tag :new_main_cat_name
+                      |Name &nbsp;&nbsp;&nbsp;
+                      span.modal_tip
+                        |[Example: Transportation]
+                    = text_field_tag :new_main_cat_name , nil, class:"form-control" 
+                  div.col-md-12.form-group
+                    = label_tag :new_main_cat_desc
+                      |Description &nbsp;&nbsp;&nbsp;
+                      span.modal_tip
+                        |[Example: Everything related to means of travelling]
+                    = text_field_tag :new_main_cat_desc , nil, class:"form-control" 
+                div.row
+                  div.col-md-12
+                    p
+                      |Any sub-categories? Click &nbsp;
+                      = button_tag :+, type: "button", id:"modal-more-sub-cats-btn"
+                      |&nbsp;&nbsp;to add.
+                    p Descriptions of sub-categories can be added later, by editing a category.
+                div.row#modal-sub-cats-div
 
-          div class="modal-footer"
-            button#modal-save.btn.btn-default.modal_control_btns Save
-            button#modal-close.btn.btn-default.modal_control_btns data-dismiss="modal" Close
+              div class="modal-footer"
+                = button_tag :Save, class:"btn btn-default modal_control_btns", id:"modal-save"
+                = button_tag :Close, type: "button", class:"btn btn-default modal_control_btns", "data-dismiss":"modal", id:"modal-close"
