@@ -7,7 +7,7 @@ gem 'glyphicons-rails'
 gem "jquery-rails"
 gem 'pg', '~> 0.20'
 gem "popper_js"
-gem "rails", "4.2.0"
+gem "rails"
 gem "slim"
 gem "turbolinks"
 # gem 'uglifier', '>= 1.3.0'
