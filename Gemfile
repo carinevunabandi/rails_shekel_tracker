@@ -23,6 +23,7 @@ group :development, :test do
   gem "phantomjs"
   gem "poltergeist"
   gem "rails_best_practices"
+  gem "rails-controller-testing"
   gem "rake"
   gem "rake-n-bake"
   gem "roodi"
