@@ -12,7 +12,7 @@ require "site_prism"
 World(FactoryBot::Syntax::Methods)
 
 Capybara.register_driver :poltergeist do |app|
-  options = {js_errors: false}
+  options = {js_errors: true}
   Capybara::Poltergeist::Driver.new(app, options)
 end
 Capybara.javascript_driver = :poltergeist

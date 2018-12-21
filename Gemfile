@@ -29,6 +29,7 @@ group :development, :test do
   gem "roodi"
   gem "rspec-rails"
   gem "rubocop"
+  gem "shoulda-matchers"
   gem "simplecov"
   gem "site_prism"
 end

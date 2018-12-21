@@ -11,6 +11,11 @@ h4, li {
   font-family: $preferred-font-family;
 }
 
+#sub-cat-paragraph {
+  padding-top:10px;
+  padding-bottom:7px;
+}
+
 .main_title {
   color: $preferred-colour;
 }
@@ -39,13 +44,7 @@ button {
   background-color: $preferred-colour !important;
 }
 
-.modal_tip {
-  color:grey;
-  font-style: italic;
-  font-weight: normal
-}
-
-#modal_more_sub_cats_btn {
+#more-sub-cats-btn {
   border-radius: 50%;
 }
 
@@ -56,10 +55,14 @@ button {
 .modal-sub-cat-label-div {
 }
 
-.modal-sub-cat-textfield {
+.sub-cat-textfield {
 }
 
-.modal-sub-cat-textfield-div {
+.rmv-sub-cat-row-btn {
+}
+
+.sub-cat-textfield-div {
+  padding-left:0px;
 }
 
 .modal-glyphicon-remove {
@@ -67,11 +70,12 @@ button {
 }
 
 .sub-cat-row {
-  margin-top: 20px;
+  padding-left:0px;
 }
 
-#modal-sub-cats-div {
+#sub-cats-div {
 }
 
-.modal-sub-cat-rmv-btn-div {
+.sub-cat-rmv-btn-div {
+  padding-top: 10px;
 }

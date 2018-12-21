@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require popper
+//= require categories
 //= require_tree .

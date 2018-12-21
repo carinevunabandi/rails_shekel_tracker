@@ -9,12 +9,9 @@
       .col-md-4
         .vl
         div.categories_buttons
-          button.btn.btn-info.btn-lg type='button' name = 'create-new' data-toggle='modal' data-target='#new_category_modal_dialog'
+          = button_to categories_new_path, { :method => :get, name: "create-new", class: "btn btn-info", form: {style: 'display:inline-block;'}}
             span.glyphicon.glyphicon-plus
           |&nbsp; New Category <br /><br />
-          button.btn.btn-info
-            span.glyphicon.glyphicon-plus
-          |&nbsp; Add sub-category to an existing main category <br /><br />
           button.btn.btn-info
             span.glyphicon.glyphicon-edit
           |&nbsp; Edit existing Category <br />

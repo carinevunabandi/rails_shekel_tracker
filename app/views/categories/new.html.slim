@@ -1,0 +1,12 @@
+h3 Create a new category
+div
+  = form_for @main_category, url: {action: "create"}, html: {class: "nifty_form"} do |f|
+    div.col-xs-8
+      = label_tag "Name"
+      = f.text_field :name, placeholder: "Example: Food & Drinks", class:'form-control'
+      p#sub-cat-paragraph
+        |Any sub-categories? Click &nbsp;
+        = button_tag :+, type: "button", id:"more-sub-cats-btn"
+        |&nbsp;&nbsp;to add.
+      div#sub-cats-div
+      = f.submit "Create",  class: "btn btn-default modal_control_btns"

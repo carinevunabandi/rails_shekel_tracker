@@ -2,12 +2,12 @@ class CategoriesPage < SitePrism::Page
   set_url '/categories'
 
   element :create_new_button  , 'button[name="create-new"]'
-  element :new_cat_name_field , 'input[id="new-main-cat-name"]'
-  element :new_cat_desc_field , 'input[id="new-main-cat-desc"]'
-  element :add_sub_cats_btn   , 'button[id="modal-more-sub-cats-btn"]'
+  element :new_cat_name_field , 'input[id="main_category_name"]'
+  element :new_cat_desc_field , 'input[id="main_category_description"]'
+  element :add_sub_cats_btn   , 'button[id="more-sub-cats-btn"]'
   element :save_new           , 'button[id="modal-save"]'
-  element :modal_dialog       , 'div[id="new_category_modal_dialog"]'
-  elements :sub_cats_fields    , '.modal-sub-cat-textfield'
+  elements :sub_cats_fields   , '.sub-cat-textfield'
+  # elements :sub_cats_fields   , '#sub-cats-div input[type="text"]'
 
   def type_in_category cat_name
     new_cat_name_field.set(cat_name)
