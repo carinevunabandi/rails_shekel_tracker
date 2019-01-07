@@ -8,7 +8,7 @@ Feature: Viewing the list of categories and their sub-categories
     Then I see the list of all categories
     And  I see the list of all sub-categories for each main category
 
-  @javascript
+  @javascript @use_selenium_js_driver
   Scenario: Adding a new category with no sub-categories
     When I click the create new category button
     And I enter in the name and the description of the new category
