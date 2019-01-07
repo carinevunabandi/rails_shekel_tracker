@@ -3,7 +3,6 @@
 
 $(function() {
 
-  nfdns
   //Add a sub-category within the create new category form
   $('#more-sub-cats-btn').click(function() {
     var cat_textfield = document.createElement("input");
