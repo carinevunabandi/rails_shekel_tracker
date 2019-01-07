@@ -14,22 +14,25 @@ gem "turbolinks"
 # gem 'coffee-rails', '~> 4.1.0'
 # gem 'jbuilder', '~> 2.0'
 
-group :development, :test do
+group :development do
   gem "byebug"
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "factory_bot_rails"
-  gem "faker"
   gem "rails_best_practices"
   gem "rails-controller-testing"
   gem "rake"
   gem "rake-n-bake"
+end
+
+group :test do
+  gem "faker"
+  gem "geckodriver-helper"
   gem "roodi"
   gem "rspec-rails"
   gem "rubocop"
-  gem "shoulda-matchers"
   gem "selenium-webdriver"
-  gem "geckodriver-helper"
+  gem "shoulda-matchers"
   gem "simplecov"
   gem "site_prism"
 end
