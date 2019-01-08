@@ -35,6 +35,7 @@ Postgres
 brew update
 brew install pg
 Start PostgreSQL: pg_ctl -D /usr/local/var/postgres start
+brew cask install chromedriver
 
 
 Create Dev and Test databases

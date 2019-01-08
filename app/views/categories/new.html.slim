@@ -9,5 +9,5 @@ div
         = button_tag :+, type: "button", id:"more-sub-cats-btn"
         |&nbsp;&nbsp;to add.
       div#sub-cats-div
+      = f.submit "Clear",  type: "reset", class: "btn btn-default modal_control_btns"
       = f.submit "Create", id: "create-category-btn", class: "btn btn-default modal_control_btns"
-      / = f.submit "Clear",  type: "reset", class: "btn btn-default modal_control_btns"

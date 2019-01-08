@@ -26,12 +26,11 @@ group :development do
 end
 
 group :test do
+  gem "capybara-selenium"
   gem "faker"
-  gem "geckodriver-helper"
   gem "roodi"
   gem "rspec-rails"
   gem "rubocop"
-  gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "simplecov"
   gem "site_prism"
