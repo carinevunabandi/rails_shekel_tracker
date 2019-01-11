@@ -14,7 +14,7 @@ gem "turbolinks"
 # gem 'coffee-rails', '~> 4.1.0'
 # gem 'jbuilder', '~> 2.0'
 
-group :development do
+group :development, :test do
   gem "byebug"
   gem "cucumber-rails", require: false
   gem "database_cleaner"
