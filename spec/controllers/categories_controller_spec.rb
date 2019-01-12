@@ -48,32 +48,56 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   describe "POST #create" do
-    let(:main_category_attrs)  { attributes_for :main_category }
-    let(:main_category)        { double(:main_category, id: 1) }
+    context "Creating a new category whose name whose name doesn't match any existing one" do
+      let(:main_category_attrs)  { attributes_for :main_category }
+      let(:main_category)        { double(:main_category, id: 1) }
 
-    before do
-      allow(MainCategory).to receive(:create).and_return(main_category)
-      allow(main_category).to receive(:save).and_return true
-    end
-
-    it "creates a new category which has no description" do
-      expect(MainCategory).to receive(:create).with(main_category_attrs).and_return(main_category)
-      post :create, params: {main_category: main_category_attrs }
-    end
-
-    it "redirects to the Categories index page after" do
-      expect(post :create, params: {main_category: main_category_attrs }).to redirect_to categories_path
-    end
-
-    context "Creating a category with sub-categories" do
-      it "creates a new category which has sub-categories" do
-        main_category_attrs = {:name=>"Personal Care", sub_categories:["Tissues", "Shower Gels", "Lotions"]}
-        expect(MainCategory).to receive(:create).with(name: "Personal Care").and_return(main_category)
-        expect(SubCategory).to receive(:create).with(name: "Tissues", main_category: main_category)
-        expect(SubCategory).to receive(:create).with(name: "Shower Gels", main_category: main_category)
-        expect(SubCategory).to receive(:create).with(name: "Lotions", main_category: main_category)
-        post :create, params: { main_category: main_category_attrs }
+      before do
+        allow(MainCategory).to receive(:create).and_return(main_category)
+        allow(main_category).to receive(:save).and_return true
       end
+
+      it "creates a new category" do
+        expect(MainCategory).to receive(:create).with(main_category_attrs).and_return(main_category)
+        post :create, params: {main_category: main_category_attrs }
+      end
+
+      context "Creating a category with sub-categories" do
+        it "creates a new category with its sub-categories" do
+          main_category_attrs = {:name=>"Personal Care", sub_categories:["Tissues", "Shower Gels", "Lotions"]}
+          expect(MainCategory).to receive(:create).with(name: "Personal Care").and_return(main_category)
+          expect(SubCategory).to receive(:create).with(name: "Tissues", main_category: main_category)
+          expect(SubCategory).to receive(:create).with(name: "Shower Gels", main_category: main_category)
+          expect(SubCategory).to receive(:create).with(name: "Lotions", main_category: main_category)
+          post :create, params: { main_category: main_category_attrs }
+        end
+      end
+
+      context "Upon successful creation of a category" do
+        before do
+          post :create, params: {main_category: main_category_attrs }
+        end
+
+        it { should set_flash[:success] }
+        it { should redirect_to categories_path }
+      end
+    end
+
+    context "Creating a new category whose name is the same as an existing one" do
+      before do
+        create(:main_category, name: "Transportation")
+        new_cat_attributes = attributes_for(:main_category, name: "Transportation")
+        new_main_category = build(:main_category, name: "Transportation")
+        allow(MainCategory).to receive(:create).with(new_cat_attributes).and_return(new_main_category)
+        allow(new_main_category).to receive(:save).and_return(false)
+        post :create, params: {main_category: new_cat_attributes }
+      end
+
+      it "doesn't create a category that already exists in the database" do
+        expect(MainCategory.where(name: "Transportation").count).to eq 1
+      end
+
+      it { should set_flash[:error] }
     end
   end
 end

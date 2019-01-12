@@ -12,7 +12,28 @@ Feature: Viewing the list of categories and their sub-categories
   Scenario: Adding a new category with no sub-categories
     When I click the create new category button
     And I enter in the name and the description of the new category
+    And I click save
+    Then the new category should be created
+    Then the category should be listed on the page
+    And I see a flash success message
+
+  @javascript
+  Scenario: Adding a new category with sub-categories
+    When I click the create new category button
+    And I enter in the name and the description of the new category
     And I enter in the name of any sub-categories for the new category
     And I click save
-    Then the new category and any sub-categories should be created
-    Then the category and all its sub-categories should be listed on the page
+    Then the new category should be created
+    And  the sub-categories should be created
+    Then the category should be listed on the page
+    And  all its sub-categories should be listed on the page
+    And I see a flash success message
+
+  @javascript
+  Scenario: Adding a category already existing
+    Given there is a Groceries expense category in the database
+    When I click the create new category button
+    And I enter Groceries as the name of the new category
+    And I click save
+    Then no other duplicate category should be created
+    And I see a flash error message

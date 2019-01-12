@@ -10,8 +10,9 @@ class CategoriesController < ApplicationController
   def create
     params = main_category_params
     @main_category = MainCategory.create(name: params["name"])
+    @main_category.save ? creation_success : creation_failure
     create_sub_categories_using params if sub_categories_submitted? params
-    redirect_to categories_path
+    redirect_to categories_path 
   end
 
   private
@@ -29,5 +30,14 @@ class CategoriesController < ApplicationController
     params[:sub_categories].each do |sub_category|
       @sub_categories << SubCategory.create(name: sub_category, main_category: @main_category)
     end
+  end
+
+  def creation_success
+    flash[:success] = "Category successfully created!"
+  end
+
+  def creation_failure
+    flash[:error] = "Failed to create"
+    flash[:error_msgs] =  @main_category.errors.messages.values.flatten.join(",")
   end
 end
