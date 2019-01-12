@@ -8,10 +8,10 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    params = main_category_params
-    @main_category = MainCategory.create(name: params["name"])
+    processed_params = main_category_params
+    @main_category = MainCategory.create(name: processed_params["name"], description: processed_params["description"])
     @main_category.save ? creation_success : creation_failure
-    create_sub_categories_using params if sub_categories_submitted? params
+    create_sub_categories_using processed_params if sub_categories_submitted? processed_params
     redirect_to categories_path 
   end
 

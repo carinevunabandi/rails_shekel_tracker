@@ -48,7 +48,7 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   describe "POST #create" do
-    context "Creating a new category whose name whose name doesn't match any existing one" do
+    context "Creating a new category" do
       let(:main_category_attrs)  { attributes_for :main_category }
       let(:main_category)        { double(:main_category, id: 1) }
 
@@ -64,8 +64,8 @@ RSpec.describe CategoriesController, type: :controller do
 
       context "Creating a category with sub-categories" do
         it "creates a new category with its sub-categories" do
-          main_category_attrs = {:name=>"Personal Care", sub_categories:["Tissues", "Shower Gels", "Lotions"]}
-          expect(MainCategory).to receive(:create).with(name: "Personal Care").and_return(main_category)
+          main_category_attrs = {:name=>"Personal Care", description: "some description", sub_categories:["Tissues", "Shower Gels", "Lotions"]}
+          expect(MainCategory).to receive(:create).with(name: "Personal Care", description: "some description").and_return(main_category)
           expect(SubCategory).to receive(:create).with(name: "Tissues", main_category: main_category)
           expect(SubCategory).to receive(:create).with(name: "Shower Gels", main_category: main_category)
           expect(SubCategory).to receive(:create).with(name: "Lotions", main_category: main_category)

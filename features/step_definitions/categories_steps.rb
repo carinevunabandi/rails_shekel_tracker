@@ -39,7 +39,7 @@ end
 
 And "I enter in the name and the description of the new category" do
   @new_category_page.type_in_category("Latest Category")
-  # @new_category_page.type_in_description("Latest Category Description")
+  @new_category_page.type_in_description("Latest Category Description")
 end
 
 And "I enter in the name of any sub-categories for the new category" do

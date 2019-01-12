@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,25 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180811225034) do
+ActiveRecord::Schema.define(version: 2019_01_12_194808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "main_categories", force: :cascade do |t|
-    t.string   "name"
+  create_table "budgets", id: :serial, force: :cascade do |t|
+    t.integer "time_period_id"
+    t.integer "amount"
+  end
+
+  create_table "main_categories", id: :serial, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
   end
 
-  create_table "sub_categories", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "main_category_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+  create_table "sub_categories", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "main_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["main_category_id"], name: "index_sub_categories_on_main_category_id"
   end
-
-  add_index "sub_categories", ["main_category_id"], name: "index_sub_categories_on_main_category_id", using: :btree
 
   add_foreign_key "sub_categories", "main_categories"
 end

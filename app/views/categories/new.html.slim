@@ -4,6 +4,8 @@ div
     div.col-xs-8
       = label_tag "Name"
       = f.text_field :name, placeholder: "Example: Food & Drinks", class:'form-control'
+      = label_tag "Description"
+      = f.text_field :description, placeholder: "Everything to do with food and eating-out", class:'form-control'
       p#sub-cat-paragraph
         |Any sub-categories? Click &nbsp;
         = button_tag :+, type: "button", id:"more-sub-cats-btn"

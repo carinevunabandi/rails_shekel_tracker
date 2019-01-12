@@ -9,6 +9,7 @@ FactoryBot.define do
        "Leisure and Hobbies", "Money loss by accident", "Obligations", "Personal Care",
        "Savings", "Special Events", "Transportation", "Unclear", "Utilities", "Voucher Purchase"].sample
     }
+    description do Faker::Lorem.sentence  end
 
     factory :main_category_with_sub_categories do
       transient do
